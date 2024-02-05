@@ -73,28 +73,8 @@ section {
 
 .home {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-}
-
-.home-img img {
-  width: 25vw;
-
-  border-bottom: 5px solid #00eeff;
-  border-radius: 50%;
-  animation: floatImage 5s linear 1;
-}
-
-@keyframes floatImage {
-  0% {
-    transform: translateX(50%);
-  }
-  50% {
-    transform: translateX(25%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
 }
 
 .home-content h3 {
@@ -499,7 +479,7 @@ span {
 .icon-park-solid--data {
   display: inline-block;
   width: 1em;
-  height: 1em;
+  height: 0.74em;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'%3E%3Cpath d='M44 11v27c0 3.314-8.954 6-20 6S4 41.314 4 38V11'/%3E%3Cpath d='M44 29c0 3.314-8.954 6-20 6S4 32.314 4 29m40-9c0 3.314-8.954 6-20 6S4 23.314 4 20'/%3E%3Cellipse cx='24' cy='10' fill='%23000' rx='20' ry='6'/%3E%3C/g%3E%3C/svg%3E");
   background-color: currentColor;
   -webkit-mask-image: var(--svg);
@@ -512,7 +492,7 @@ span {
 .logos--web-dev-icon {
   display: inline-block;
   width: 1.18em;
-  height: 1em;
+  height: 0.7em;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 218'%3E%3Cpath fill='%23000' d='M226.859 160.16h-86.308c-.97 0-2.91 0-3.88.969l-64.973 51.397c-.97.97-.97 1.94 0 2.91c0 .97.97.97 1.94.97h154.19c15.517 0 29.093-13.578 28.124-30.063c-.97-15.516-14.547-26.184-29.093-26.184'/%3E%3Cpath fill='%230D55FF' d='M156.445 106.018c-.97-7.758-4.849-15.516-10.667-20.365L45.893 6.133c-12.607-9.698-30.062-7.758-39.76 4.849c-9.698 12.607-7.758 30.062 4.849 39.76l72.731 58.185l-72.731 58.185c-12.607 9.698-14.547 27.154-4.849 39.76c9.698 12.607 27.153 14.547 39.76 4.85l99.885-81.46c6.788-5.819 10.667-13.577 10.667-22.305z'/%3E%3Cpath fill='%237000F2' d='M255.952 188.282c0 15.516-12.607 28.123-28.123 28.123c-15.516 0-28.123-12.607-28.123-28.123c0-15.516 12.607-28.123 28.123-28.123c15.516 0 28.123 12.607 28.123 28.123'/%3E%3C/svg%3E");
   background-color: currentColor;
   -webkit-mask-image: var(--svg);
@@ -574,4 +554,107 @@ span {
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
+}
+
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateX(50%);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.card-front {
+  height: 65vh;
+  width: 25vw;
+  margin-top: 4rem;
+  background: url(/image/image.png);
+  border-bottom: 5px solid #00eeff;
+  border-radius: 50%;
+  background-position: 50% 50%;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+  transition: 0.5s;
+  cursor: pointer;
+  animation: floatImage 5s linear 1;
+}
+.card-back {
+  height: 65vh;
+  width: 25vw;
+  margin-top: 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(/image/avatar.png);
+  background-size: cover;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: 0.5s;
+
+  animation: floatImage 5s linear 1;
+}
+
+/* .ic--outline-whatsapp {
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28'/%3E%3C/svg%3E");
+  background-color: #00eeff;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+} */
+
+.f7--phone-circle {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3E%3Cpath fill='%23000' d='M28 51.906c13.055 0 23.906-10.828 23.906-23.906c0-13.055-10.875-23.906-23.93-23.906C14.899 4.094 4.095 14.945 4.095 28c0 13.078 10.828 23.906 23.906 23.906m0-3.984C16.937 47.922 8.1 39.062 8.1 28c0-11.04 8.813-19.922 19.876-19.922c11.039 0 19.921 8.883 19.945 19.922c.023 11.063-8.883 19.922-19.922 19.922m-5.625-14.39c5.46 5.484 12.422 8.952 16.547 4.85a3.54 3.54 0 0 0 .398-.468c1.078-1.195 1.383-2.789 0-3.82c-1.078-.774-2.226-1.57-4.172-2.93c-1.359-.96-2.25-.727-3.304.328l-.938.914c-.281.258-.726.235-1.031.047c-.82-.492-2.203-1.594-3.516-2.906c-1.289-1.29-2.46-2.742-2.906-3.516c-.164-.258-.281-.68.047-.984l.914-.985c1.055-1.101 1.289-1.945.305-3.328l-2.883-4.078c-.985-1.383-2.414-1.125-3.985.047c-.117.094-.21.188-.304.281c-4.125 4.125-.633 11.086 4.828 16.547'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* CSS for Tooltip */
+a[href^="tel:"] i.bx {
+  position: relative;
+}
+
+a[href^="tel:"] i.bx:hover::after {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+  content: "+91 7456 947 785";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: #ffffffc0; */
+  color: #00eeff;
+  padding: 5px;
+  margin-top: 20px;
+  border-radius: 5px;
+  white-space: nowrap;
 }
