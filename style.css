@@ -45,23 +45,6 @@ section {
   z-index: 100;
 }
 
-.home-img img {
-  width: 25vw; 
-  border-bottom: 5px solid #00eeff; 
-  border-radius: 50%;
-  animation: floatImage 5s linear 1;
-}
-@keyframes floatImage {
-0% {
-    transform: translateX(90%);
-}
-50% {
-    transform: translateX(45%);
-}
-100% {
-    transform: translateX(0%);
-}
-}
 
 .header.sticky {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
@@ -93,6 +76,23 @@ section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+.home-img img {
+  width: 25vw; 
+  border-bottom: 5px solid #00eeff; 
+  border-radius: 50%;
+  animation: floatImage 5s linear 1;
+}
+@keyframes floatImage {
+0% {
+    transform: translateX(90%);
+}
+50% {
+    transform: translateX(45%);
+}
+100% {
+    transform: translateX(0%);
+}
 }
 
 .home-content h3 {
