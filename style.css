@@ -45,7 +45,6 @@ section {
   z-index: 100;
 }
 
-
 .header.sticky {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
@@ -77,29 +76,10 @@ section {
   justify-content: space-evenly;
   align-items: center;
 }
-/* .home-img img {
-  width: 25vw; 
-  border-bottom: 5px solid #00eeff; 
+
+.home-img img {
+  border-bottom: 5px solid #00eeff;
   border-radius: 50%;
-  /* animation: floatImage 5s linear 1; 
-} */
-
- .home-img img {
-  width: 25vw; 
-  border-bottom: 5px solid #00eeff; 
-  border-radius: 50%;
-  transition: transform 0.5s; 
-}
-
-/*
-.home-img img:hover {
-  transform: scaleX(-1); /* Flip the image horizontally on hover 
-} */
-
-.home-img .card img {
-  width: 100%; /* Set width to 100% */
-  height: 100%; /* Set height to 100% */
-  object-fit: cover; /* Maintain aspect ratio and cover entire container */
 }
 
 .home-img .card {
@@ -109,15 +89,13 @@ section {
   perspective: 1000px;
 }
 
-.home-img .card-front {
+.home-img .card img {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
-  transition: transform 0.5s;
+  object-fit: cover;
 }
+
+.home-img .card-front,
 .home-img .card-back {
   width: 100%;
   height: 100%;
@@ -125,14 +103,8 @@ section {
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  transform: rotateY(180deg); /* Ensure the back image is not flipped */
   transition: transform 0.5s;
 }
-
-.home-img .card:hover .card-back {
-  transform: rotateY(0deg);
-}
-
 
 .home-img .card-front {
   transform-style: preserve-3d;
@@ -146,23 +118,9 @@ section {
   transform: rotateY(180deg);
 }
 
-/* .home-img .card:hover .card-back {
+.home-img .card:hover .card-back {
   transform: rotateY(0deg);
-} */
-
-
-
-/* @keyframes floatImage {
-0% {
-    transform: translateX(90%);
 }
-50% {
-    transform: translateX(45%);
-}
-100% {
-    transform: translateX(0%);
-}
-} */
 
 .home-content h3 {
   font-size: 3.2rem;
@@ -493,7 +451,6 @@ span {
   .home-content h1 {
     font-size: 5rem;
   }
-  
 
   .about {
     flex-direction: column-reverse;
@@ -533,10 +490,7 @@ span {
 }
 
 @media (max-width: 365px) {
-  .home-img img {
-    width: 90vw;
-  }
-
+  .home-img img,
   .about-img img {
     width: 90vw;
   }
@@ -549,10 +503,19 @@ span {
     text-align: center;
     margin-top: 2rem;
   }
+
   .footer-text p {
     font-family: cursive;
     font-size: large;
     font-weight: 500;
+  }
+}
+
+/* Tablet-specific styles */
+@media (max-width: 768px) {
+  .home-img .card {
+    width: 75vw;
+    height: 90vw;
   }
 }
 
@@ -640,60 +603,6 @@ span {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
-
-/* .card:hover .card-front {
-  transform: rotateY(-180deg);
-}
-
-.card:hover .card-back {
-  transform: rotateY(0deg);
-}
-
-@keyframes floatImage {
-  0% {
-    transform: translateX(50%);
-  }
-  50% {
-    transform: translateX(25%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-} */
-
-/* .card-front {
-  height: 65vh;
-  width: 25vw;
-  margin-top: 4rem;
-  background: url(/image/image.png);
-  border-bottom: 5px solid #00eeff;
-  border-radius: 50%;
-  background-position: 50% 50%;
-  background-size: cover;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
-  transform: rotateX(0deg);
-  transition: 0.5s;
-  cursor: pointer;
-  /* animation: floatImage 5s linear 1;
-}
-.card-back {
-  height: 65vh;
-  width: 25vw;
-  margin-top: 4rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(/image/avatar.png);
-  background-size: cover;
-  border-radius: 50%;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  transition: 0.5s;
-
-  /* animation: floatImage 5s linear 1; 
-} */
 
 /* .ic--outline-whatsapp {
   display: inline-block;
