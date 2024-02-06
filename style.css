@@ -45,6 +45,24 @@ section {
   z-index: 100;
 }
 
+.home-img img {
+  width: 25vw; 
+  border-bottom: 5px solid #00eeff; 
+  border-radius: 50%;
+  animation: floatImage 5s linear 1;
+}
+@keyframes floatImage {
+0% {
+    transform: translateX(90%);
+}
+50% {
+    transform: translateX(45%);
+}
+100% {
+    transform: translateX(0%);
+}
+}
+
 .header.sticky {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
@@ -406,10 +424,8 @@ span {
   .home-content h1 {
     font-size: 5rem;
   }
-  .home-img img {
-    width: 70vw;
-    margin-top: 4rem;
-  }
+  
+
   .about {
     flex-direction: column-reverse;
   }
@@ -556,7 +572,7 @@ span {
   mask-size: 100% 100%;
 }
 
-.card:hover .card-front {
+/* .card:hover .card-front {
   transform: rotateY(-180deg);
 }
 
@@ -574,9 +590,9 @@ span {
   100% {
     transform: translateX(0%);
   }
-}
+} */
 
-.card-front {
+/* .card-front {
   height: 65vh;
   width: 25vw;
   margin-top: 4rem;
@@ -591,7 +607,7 @@ span {
   transform: rotateX(0deg);
   transition: 0.5s;
   cursor: pointer;
-  /* animation: floatImage 5s linear 1; */
+  /* animation: floatImage 5s linear 1; 
 }
 .card-back {
   height: 65vh;
@@ -607,8 +623,8 @@ span {
   transform: rotateY(180deg);
   transition: 0.5s;
 
-  /* animation: floatImage 5s linear 1; */
-}
+  /* animation: floatImage 5s linear 1; 
+} */
 
 /* .ic--outline-whatsapp {
   display: inline-block;
